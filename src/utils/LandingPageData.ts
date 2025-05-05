@@ -85,7 +85,7 @@ export const LandingPageData: LandingPageProps = {
   title: "Dive into the ultimate SpaceX archive",
   description:
     "explore every launch from historic successes to early failures. Discover in-depth details, captivating articles, and immersive videos that bring the story of space exploration to life.",
-  callToAction: { label: "Start Browsing", href: "/resources" },
+  callToAction: { label: "Start Browsing" },
   rating: 5,
   ratingLabel: "1,000+ people surfing the Archive",
   imageGridItems: IMAGE_GRID_ITEMS,

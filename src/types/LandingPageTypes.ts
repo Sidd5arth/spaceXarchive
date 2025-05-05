@@ -7,7 +7,7 @@ export type LandingPageProps = {
   badge: string;
   title: string;
   description: string;
-  callToAction: { label: string; href: string };
+  callToAction: { label: string };
   rating: number;
   ratingLabel: string;
 };
