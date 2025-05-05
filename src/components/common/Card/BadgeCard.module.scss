@@ -1,0 +1,43 @@
+.card {
+  background-color: light-dark(
+    var(--mantine-color-white),
+    var(--mantine-color-dark-7)
+  );
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 2rem;
+}
+
+.section {
+  border-bottom: 1px solid
+    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  padding-left: var(--mantine-spacing-md);
+  padding-right: var(--mantine-spacing-md);
+  padding-bottom: var(--mantine-spacing-md);
+  margin-top: 1rem;
+}
+
+.like {
+  color: var(--mantine-color-red-6);
+  width: 20px;
+  height: 20px;
+}
+
+.label {
+  text-transform: uppercase;
+  font-size: var(--mantine-font-size-xs);
+  font-weight: 700;
+}
+
+.description {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Adjust this for 2/3 lines */
+  -webkit-box-orient: vertical;
+  min-height: 3.5em; /* Optional: consistent block height */
+}
