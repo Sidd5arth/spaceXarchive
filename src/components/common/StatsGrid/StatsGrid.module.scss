@@ -6,16 +6,16 @@
 .value {
   font-size: 26px;
   font-weight: 700;
-  color: var(--mantine-color-gray-9);
+  color: var(--mantine-color-neutral-7);
 }
 
 .icon {
-  color: var(--mantine-color-gray-6);
+  color: var(--mantine-color-neutral-5);
 }
 
 .title {
   font-weight: 600;
-  color: var(--mantine-color-gray-7);
+  color: var(--mantine-color-gray-6);
   text-transform: uppercase;
 }
 
@@ -57,4 +57,8 @@
 }
 .widePaper {
   grid-column: span 2;
+
+  @media (max-width: 500px) {
+    grid-column: span 1;
+  }
 }
