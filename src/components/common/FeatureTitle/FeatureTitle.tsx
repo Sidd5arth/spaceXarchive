@@ -17,6 +17,9 @@ import {
   Stack,
 } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 import classes from "./FeaturesTitle.module.scss";
 import { fetchLaunchPadDetail } from "../../../api/spaceApi";
 
@@ -24,6 +27,14 @@ interface FeatureProps {
   launchPadId: string;
   desc: string;
 }
+
+delete (L.Icon.Default.prototype as any)._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl:
+    "https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png",
+  iconUrl: "https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.9.3/dist/images/marker-shadow.png",
+});
 
 export function FeaturesTitle({ launchPadId, desc }: FeatureProps) {
   const { data, isLoading, isError } = useQuery({
@@ -94,6 +105,21 @@ export function FeaturesTitle({ launchPadId, desc }: FeatureProps) {
           </Stack>
         </div>
       </SimpleGrid>
+
+      <MapContainer
+        center={[data.latitude, data.longitude]}
+        zoom={10}
+        scrollWheelZoom={false}
+        style={{ height: "300px", marginTop: "2rem", borderRadius: "8px" }}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={[data.latitude, data.longitude]}>
+          <Popup>{data.name}</Popup>
+        </Marker>
+      </MapContainer>
     </div>
   );
 }

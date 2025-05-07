@@ -1,5 +1,5 @@
 import { ImageItem, LandingPageProps } from "../types/LandingPageTypes";
-
+import { IconRocket, IconSatellite, IconMapPin } from "@tabler/icons-react";
 export const AVATAR_ITEMS: ImageItem[] = [
   {
     src: "https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?q=80&w=2488&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?&format&fit=facearea&facepad=3&w=900&h=900&q=80&ixlib=rb-1.2.1",
@@ -92,3 +92,24 @@ export const LandingPageData: LandingPageProps = {
   imageGridItemSize: { width: 200, height: 300 },
   avatarItems: AVATAR_ITEMS,
 };
+
+export const mockdata = [
+  {
+    title: "Rocket Data",
+    description:
+      "Get detailed specifications of rockets including height, mass, engines, and success rate. Analyze Falcon 9, Falcon Heavy, and more.",
+    icon: IconRocket,
+  },
+  {
+    title: "Launch Data",
+    description:
+      "Access past launches with details like launch date, mission name, rocket used, launchpad location, and mission status.",
+    icon: IconSatellite,
+  },
+  {
+    title: "Payload and Location",
+    description:
+      "View payload details such as type, mass, orbit, and destination. Track launchpads and landing zones by geolocation.",
+    icon: IconMapPin,
+  },
+];

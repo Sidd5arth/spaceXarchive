@@ -9,6 +9,8 @@ import {
   useMantineTheme,
   Loader,
   Flex,
+  Box,
+  rem,
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { DatePickerInput } from "@mantine/dates";
@@ -17,6 +19,8 @@ import PaginatedList from "../components/common/PaginationList";
 import BadgeCard from "../components/common/Card/BadgeCard";
 import SearchInput from "../components/common/SearchInput";
 import { useFilteredResources } from "../hooks/useFilteredResource";
+import animationData from "../Lottie/Animation .json";
+import Lottie from "lottie-react";
 
 const ResourceListPage: React.FC = () => {
   const theme = useMantineTheme();
@@ -48,14 +52,61 @@ const ResourceListPage: React.FC = () => {
           shadow="sm"
           radius="xl"
           p="xl"
-          mb="md"
+          mb="xl"
           withBorder
-          style={{ backgroundColor: "#f8f9fa" }}
+          style={{ backgroundColor: "var(--mantine-color-primary-0)" }}
         >
-          <Title order={2}>Explore Launch Resources</Title>
-          <Text c="dimmed" size="sm">
-            Browse through historical space launch data and mission details.
-          </Text>
+          <Flex
+            align="center"
+            justify="space-between"
+            direction={{ base: "column", sm: "row" }}
+            gap="xl"
+          >
+            <Box maw={480}>
+              <Stack spacing="sm">
+                <Title
+                  order={1}
+                  sx={(theme) => ({
+                    fontSize: "1.75rem",
+
+                    [theme.fn.largerThan("sm")]: {
+                      fontSize: "2.25rem",
+                    },
+                    [theme.fn.largerThan("md")]: {
+                      fontSize: "3rem",
+                    },
+                  })}
+                >
+                  Explore Launch Resources
+                </Title>
+                <Text c="dimmed" size="sm">
+                  Browse through historical space launch data and mission
+                  details.
+                </Text>
+              </Stack>
+            </Box>
+
+            <Box
+              w={{ base: "100%", sm: rem(250), md: rem(300) }}
+              h={{ base: rem(200), sm: rem(250), md: rem(300) }}
+              sx={{
+                opacity: "80%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+              pt="1.8rem"
+            >
+              <Box w="100%" h="100%">
+                <Lottie
+                  animationData={animationData}
+                  loop
+                  autoplay
+                  style={{ width: "100%", height: "100%" }}
+                />
+              </Box>
+            </Box>
+          </Flex>
         </Paper>
 
         {isMobile ? (

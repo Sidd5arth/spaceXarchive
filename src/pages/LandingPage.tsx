@@ -16,6 +16,8 @@ import {
   Text,
 } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
+import FeatureSection from "../components/FeatureSection/FeatureSection";
+import NewsLetter from "../components/NewsLetterSection/NewsLetter";
 
 export const LandingPage = () => {
   const navigate = useNavigate();
@@ -165,7 +167,7 @@ export const LandingPage = () => {
           bottom={0}
           sx={(theme) => ({
             zIndex: 2,
-            backgroundColor: "rgba(255, 255, 255, 0.6)",
+            backgroundColor: "rgba(255, 255, 255, 0.8)",
             backdropFilter: "blur(10px)",
             WebkitBackdropFilter: "blur(10px)",
             display: "block",
@@ -179,7 +181,7 @@ export const LandingPage = () => {
           gutter="lg"
           w={data.imageGridItemSize.width * 3 + 60}
           pos="absolute"
-          top={0}
+          bottom={40}
           right={-30}
           style={{
             transform: "rotate(8deg)",
@@ -218,6 +220,8 @@ export const LandingPage = () => {
           ))}
         </Grid>
       </Container>
+      <FeatureSection />
+      <NewsLetter />
     </Container>
   );
 };
