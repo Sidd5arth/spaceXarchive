@@ -72,6 +72,7 @@ const SegmentCard = ({ currentSegment, data }: Props) => {
                               backgroundColor: "var(--mantine-color-primary-0)",
                               height: "2rem",
                               width: "2rem",
+                              flexShrink: 0,
                             }}
                           >
                             {item.icon}

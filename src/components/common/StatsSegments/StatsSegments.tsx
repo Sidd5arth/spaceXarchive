@@ -77,6 +77,7 @@ export function StatsSegments({ rocket }: StatsSegmentsProps) {
               "Second Stage",
               "Engines",
             ]}
+            sx={{ border: "1px solid var(--mantine-color-neutral-3)" }}
             bg="var(--mantine-color-primary-0)"
             value={currentSegment}
             onChange={(segment) => setCurrentSegment(segment)}

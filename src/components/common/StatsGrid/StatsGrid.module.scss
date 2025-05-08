@@ -27,6 +27,7 @@
   border-radius: 2rem;
   position: relative;
   margin-top: 1.33rem;
+  border: 1px solid var(--mantine-color-neutral-3);
 }
 
 .missionPatch {
@@ -36,19 +37,28 @@
 }
 
 .articleLink {
+  display: flex;
+  justify-content: center;
   position: absolute;
+  align-items: center;
   top: 20px;
+  gap: 4px;
   right: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 5px 10px;
   border-radius: 1em;
-  text-decoration: none;
   font-weight: bold;
 }
 
 .articleLink:hover {
   background-color: rgba(0, 0, 0, 0.7);
+  color: var(--mantine-color-primary-1);
+  transition: all 0.3s ease-out;
+}
+.articleLink a {
+  color: white;
+  text-decoration: none;
 }
 
 .paper {

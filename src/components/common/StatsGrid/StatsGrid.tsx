@@ -2,6 +2,7 @@ import { StatsGridProps } from "../../../types/StatsDataTypes";
 import { Group, Paper, SimpleGrid, Text } from "@mantine/core";
 import classes from "./StatsGrid.module.scss";
 import { icons } from "../../../utils/GetStatsDs";
+import { IconLink } from "@tabler/icons-react";
 const StatsGrid = ({ data, articleLink, missionPatch }: StatsGridProps) => {
   const stats = data.map((stat, index) => {
     const Icon = icons[stat.icon];
@@ -54,14 +55,12 @@ const StatsGrid = ({ data, articleLink, missionPatch }: StatsGridProps) => {
         />
 
         {articleLink && (
-          <a
-            href={articleLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={classes.articleLink}
-          >
-            Read Article
-          </a>
+          <div className={classes.articleLink}>
+            <a href={articleLink} target="_blank" rel="noopener noreferrer">
+              Read Article
+            </a>
+            <IconLink />
+          </div>
         )}
       </div>
     </div>

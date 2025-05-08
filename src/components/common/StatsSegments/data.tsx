@@ -191,7 +191,7 @@ const SegmentData = (rocket: any) => {
     },
     {
       currentSegment: "Size",
-      title: "Size & Payload",
+      title: "Size",
       items: [
         {
           icon: <IconWalk size={14} />,
@@ -218,15 +218,15 @@ const SegmentData = (rocket: any) => {
             ? `${rocket.mass.kg ?? "?"} kg / ${rocket.mass.lb ?? "?"} lb`
             : "N/A",
         },
-        {
-          icon: <IconChartPie size={14} />,
-          name: "Payload Weights",
-          value: Array.isArray(rocket?.payload_weights)
-            ? rocket.payload_weights
-                .map((p: any) => `${p.name ?? "?"}: ${p.kg ?? "?"} kg`)
-                .join(", ")
-            : "N/A",
-        },
+        // {
+        //   icon: <IconChartPie size={14} />,
+        //   name: "Payload Weights",
+        //   value: Array.isArray(rocket?.payload_weights)
+        //     ? rocket.payload_weights
+        //         .map((p: any) => `${p.name ?? "?"}: ${p.kg ?? "?"} kg`)
+        //         .join(", ")
+        //     : "N/A",
+        // },
       ],
     },
   ];
