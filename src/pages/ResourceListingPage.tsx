@@ -19,7 +19,7 @@ import PaginatedList from "../components/common/PaginationList";
 import BadgeCard from "../components/common/Card/BadgeCard";
 import SearchInput from "../components/common/SearchInput";
 import { useFilteredResources } from "../hooks/useFilteredResource";
-import animationData from "../Lottie/Animation .json";
+import animationData from "../Lottie/Animation.json";
 import Lottie from "lottie-react";
 
 const ResourceListPage: React.FC = () => {
@@ -48,14 +48,7 @@ const ResourceListPage: React.FC = () => {
   return (
     <Container mb="3em">
       <Paper mt="lg">
-        <Paper
-          shadow="sm"
-          radius="xl"
-          p="xl"
-          mb="xl"
-          withBorder
-          style={{ backgroundColor: "var(--mantine-color-primary-0)" }}
-        >
+        <Paper shadow="sm" radius="xl" p="xl" mb="xl" withBorder>
           <Flex
             align="center"
             justify="space-between"
@@ -79,9 +72,10 @@ const ResourceListPage: React.FC = () => {
                 >
                   Explore Launch Resources
                 </Title>
-                <Text c="dimmed" size="sm">
-                  Browse through historical space launch data and mission
-                  details.
+                <Text c="dimmed" size="sm" w="80%">
+                  Browse historical launch data and mission highlights. View
+                  rocket specs, payloads, and launch sites. Discover key
+                  milestones in space exploration.
                 </Text>
               </Stack>
             </Box>
@@ -90,12 +84,11 @@ const ResourceListPage: React.FC = () => {
               w={{ base: "100%", sm: rem(250), md: rem(300) }}
               h={{ base: rem(200), sm: rem(250), md: rem(300) }}
               sx={{
-                opacity: "80%",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
               }}
-              pt="1.8rem"
+              pt="1.5rem"
             >
               <Box w="100%" h="100%">
                 <Lottie
