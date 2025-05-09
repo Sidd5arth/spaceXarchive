@@ -40,7 +40,7 @@ const ResourceDetailPage: React.FC = () => {
     <Container mb="3em">
       <CarouselComponent imageData={rocket?.flickr_images || []} />
       <Paper withBorder radius="xl" p="xl" mt="xl">
-        <Text>{launch.details}</Text>
+        <Text size="sm">{launch.details}</Text>
       </Paper>
       <StatsGrid
         data={statsData}
