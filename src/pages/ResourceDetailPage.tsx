@@ -1,7 +1,15 @@
 import { StatsSegments } from "../components/common/StatsSegments/StatsSegments";
 import { FeaturesTitle } from "../components/common/FeatureTitle/FeatureTitle";
 import CarouselComponent from "../components/common/CardCarousel/CardCarousel";
-import { Flex, Container, Modal, Button, rem } from "@mantine/core";
+import {
+  Flex,
+  Container,
+  Modal,
+  Paper,
+  Text,
+  Button,
+  rem,
+} from "@mantine/core";
 import { NotFound } from "../components/common/NotFound/NotFound";
 import StatsGrid from "../components/common/StatsGrid/StatsGrid";
 import { useLaunchDetails } from "../hooks/useLaunchDetails";
@@ -31,6 +39,9 @@ const ResourceDetailPage: React.FC = () => {
   return (
     <Container mb="3em">
       <CarouselComponent imageData={rocket?.flickr_images || []} />
+      <Paper withBorder radius="xl" p="xl" mt="xl">
+        <Text>{launch.details}</Text>
+      </Paper>
       <StatsGrid
         data={statsData}
         articleLink={launch?.links?.article || ""}
